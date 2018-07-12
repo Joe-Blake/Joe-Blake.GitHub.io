@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://10.0.108.32:8000/testmini.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <!-- <div id="image">
+        </div> -->
+
+        
+        
+        
+        <input style="width:100px;height:100px" id="share" name="117" type="button" onclick="" value="分享功能">
+
+        <input style="width:100px;height:100px" id="openMiniProgram" name="" type="button" onclick="openMiniProgram()" value="打开小程序">
+
+
+        <script type="text/javascript">
+
+
+        //判断useragent 动态引入js
+        var userAgent = navigator.userAgent;
+        var cookiestr = document.cookie ;
+        //alert(cookiestr);
+       if(userAgent.indexOf('cdvsupport') >= 0||cookiestr.indexOf('cdvsupport') >= 0){
+           document.write("<script type='text/javascript' src='nacodovafile/js/cordova.js#nacodovafile'><\/script>");
+           document.write("<script type='text/javascript' src='nacodovafile/js/cdplugins.js#nacodovafile'><\/script>"); 
+       }
+ 
+        var newwebbutton = document.getElementById("newweb");
+        newwebbutton.onclick = function(){
+            // CD58UtilsPlugin.util("TargetNative",{"url":"Target_Cordova/Action_openUrl?url=https://www.baidu.com"},function(){},function(){});
+            CD58RouterPlugin.navigateToWebView('http://www.baidu.com?navStyle=%7b%22color%22%3a%22%235FA4FF%22%7d',{});
+        }
+
+
+        
+        function shopManage() {
+            TargetNative("JYTarget_Native/Action_rn?page=mine_shopManage")
+        }
+
+        function orderLis() {
+            TargetNative("JYTarget_Native/Action_rn?page=order_orderListSet&tabType=2")
+        }
+
+        function goods_categoryList() {
+            TargetNative("JYTarget_Native/Action_rn?page=goods_categoryListClassOne")
+        }
+
+        function goods_categoryListClassTwo() {
+            TargetNative("JYTarget_Native/Action_rn?page=goods_categoryListClassTwo&firstCateId=36")
+        }
+
+         function goods_goodsForm() {
+            TargetNative("JYTarget_Native/Action_rn?page=goods_goodsForm&productId=XXX&productKind=XXX&productKind=XXX")
+        }
+
+         function action_walletpage() {
+            TargetNative("JYTarget_Native/Action_walletpage")
+        }
+
+         function action_orderpage() {
+            TargetNative("JYTarget_Native/Action_orderpage?orderId=1122230231900488769")
+        }
+        function Action_personalpage() {
+            TargetNative("JYTarget_Native/Action_personalpage?1=1")
+        }
+
+         function Action_feedback() {
+            TargetNative("JYTarget_Native/Action_feedback")
+        }
+
+          function Action_noticeMessage() {
+            TargetNative("JYTarget_Native/Action_noticeMessage")
+        }
+
+           function Action_systemMessage() {
+            TargetNative("JYTarget_Native/Action_systemMessage")
+        }
+        function Action_addFeedback() {
+            TargetNative("JYTarget_Native/Action_addFeedback?feedbackPage=XXX&feedbackType=XXX ")
+        }
+
+        function businessState(){
+            TargetNative("JYTarget_Native/Action_rn?page=mine_businessState")
+        }
+        
+        function shopAffiche(){
+            
+            TargetNative("JYTarget_Native/Action_rn?page=mine_shopAffiche")
+
+        }
+        function serviceTime(){
+            TargetNative("JYTarget_Native/Action_rn?page=mine_serviceTime")
+        }
+
+function addressRange(){
+    
+    TargetNative("JYTarget_Native/Action_rn?page=mine_addressRange")
+
+}
+
+function illegalAppeal(){
+    
+    TargetNative("JYTarget_Native/Action_rn?page=mine_illegalAppeal")
+
+}
+function gatherCode(){
+    
+    TargetNative("JYTarget_Native/Action_rn?page=mine_gatherCode")
+}
+        
+function Action_paymentDetail(){
+    TargetNative("JYTarget_Native/Action_paymentDetail")
+}
+        function Action_modifyContact(){
+            TargetNative("JYTarget_Native/Action_modifyContact")
+        }
+
+        
+         function TargetNative(url){
+             var url = url;
+            CD58UtilsPlugin.util("TargetNative",{"url":url},function(){},function(){});
+        }
+
+    function openMiniProgram(){
+        alert("a");
+        var data={
+        "userName":"gh_b0d39e167892",
+        "path":"/pages/serviceDetail/serviceDetail?productId=1753323&hmsr=zx",
+        "miniProgramType":0,
+    }
+    CD58UtilsPlugin.util("openMiniProgram",data,function(data){
+    },function(data){
+    });
+    }
+
+
+
+        var sharecall = function(){
+           var sharedata ={
+    "content":"15个字以内",
+    "desc":"<body style='font-size:13px;color:#525a66' align='center'>用户下单成功后，您有机会进入<font color='#e6454a'>精选商家，</font><font color='#e6454a'>提升排名</font>哦</body>",
+    "logkey":"xueyi",
+    "mediaType":"link",
+    "panels":[
+        {
+            "panelData":{
+                "content":"58到家 | 15个字以内",
+                "iconUrl":"https://images.djtest.cn//dop2c/custom/9df850f25b9c2c8519f9c1d85989828e.jpeg?x-oss-process=image/resize,h_300",
+                "linkUrl":"https://m-dop78.djtest.cn/user/product/detail?productId=1156588&hmsr=wodefuwu_shangjiaduan_fenxiang",
+                "title":"我在58到家发现了超值的服务，推荐给你~！",
+                "mediaType":"image",
+                "imageUrl":"https://images.djtest.cn//dop2c/custom/9df850f25b9c2c8519f9c1d85989828e.jpeg?x-oss-process=image/resize,h_300"
+            },
+            "panelKey":"weixin_friends"
+        },
+        {
+            "panelData":{
+                "iconUrl":"https://images.djtest.cn//dop2c/custom/9df850f25b9c2c8519f9c1d85989828e.jpeg?x-oss-process=image/resize,h_300",
+                "linkUrl":"https://m-dop78.djtest.cn/user/product/info?productId=1156588&hmsr=wodefuwu_shangjiaduan_fenxiang",
+                "mediaType":"wxMiniProgram",
+                "title":"15个字以内",
+                "wxMiniProgramId":"gh_b0d39e167892",
+                "wxMiniProgramPagePath":"/pages/serviceDetail/serviceDetail?productId=1156588&hmsr=zx",
+                "wxMiniProgramType":"0"
+            },
+            "panelKey":"weixin_chat"
+        },
+        {
+            "panelData":{
+                "linkUrl":"https://m-dop78.djtest.cn/user/product/detail?productId=1156588&hmsr=wodefuwu_shangjiaduan_fenxiang"
+            },
+            "panelKey":"copylink"
+        }
+    ],
+    "title":"58到家"
+};
+
+
+            CD58UtilsPlugin.util("sharefunction",sharedata,function(data){
+                                 
+                                  var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;
+                                  if(isjson){
+                                   // alert(JSON.stringify(data));
+                                  }else{
+                                    //alert(JSON.stringify(data));
+                                  }
+                                  
+                                  },function(data){
+                                 var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;
+                                  if(isjson){
+                                   //alert(JSON.stringify(data));
+                                  }else{
+                                    //alert(JSON.stringify(data));
+                                  }
+                                  });//navigateToWebView('index2.html',3);
+        }
+
+          var share = document.getElementById("share");
+        share.onclick = sharecall;
+
+
+        </script>
+    
+
+</body></html>
